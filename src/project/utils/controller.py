@@ -2,9 +2,7 @@ import requests as re
 import json
 import os
 from pathlib import Path
-import urllib3
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # API configuration
 BASE_URL = "https://api.jikan.moe/v4"
@@ -38,7 +36,6 @@ class AnimeController:
             return None
     
     def parse_anime_data(self, raw_api_data):
-        # Extract needed fields from API
         parsed_results = []
         
         for anime in raw_api_data:
